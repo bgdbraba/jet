@@ -89,8 +89,7 @@ public abstract class LogicalRecord implements Serializable, Comparable<LogicalR
             throw new IllegalStateException("Cannot set the IDC of a Type 1 Record");
         }
 
-        //this.setField(2, new Field(String.format("%02d", idc)));
-        this.setField(2, new Field(idc + ""));
+        this.setField(2, new Field(String.format("%d", idc)));
     }
 
     /**

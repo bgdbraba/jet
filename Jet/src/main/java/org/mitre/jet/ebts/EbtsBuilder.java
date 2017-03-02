@@ -87,8 +87,7 @@ public class EbtsBuilder {
                 if (logicalRecord.getIdc() == -1) {
                     nextIdc = getNextAvailableIDC();
                 }
-                //final String idc = String.format("%02d", nextIdc);
-                final String idc = "" + nextIdc;
+                final String idc = String.format("%d", nextIdc);
                 logicalRecord.setIdc((byte) nextIdc);
                 occurrence.getSubFields().add(new SubField(idc));
             }
