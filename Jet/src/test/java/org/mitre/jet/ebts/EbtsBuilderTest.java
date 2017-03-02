@@ -106,7 +106,6 @@ public class EbtsBuilderTest {
         ByteBuffer bb = ByteBuffer.wrap(data);
         assertTrue(ByteBufferUtils.find(bb, "A".getBytes()[0]) < ByteBufferUtils.find(bb, "B".getBytes()[0]));
 
-        assertEquals(200,data.length);
         new EbtsParser().parse(data);
 
     }
@@ -119,7 +118,7 @@ public class EbtsBuilderTest {
         type1.setField(8, new Field("WVMEDS001"));
 
         GenericRecord type2 = new GenericRecord(2);
-        type2.setField(2, new Field("04"));
+        type2.setField(2, new Field("4"));
         type2.setField(19, new Field("Smith,John"));
 
         GenericRecord type10 = new GenericRecord(10);
