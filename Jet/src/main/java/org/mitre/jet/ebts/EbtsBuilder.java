@@ -76,7 +76,8 @@ public class EbtsBuilder {
             //First occurrence contains 1 - # of records
             if (logicalRecord.getRecordType() == 1) {
                 occurrence.getSubFields().add(new SubField("1"));
-                final String length = String.format("%02d", ebts.getAllRecords().size()-1);
+                //final String length = String.format("%02d", ebts.getAllRecords().size()-1);
+                final String length = "" + (ebts.getAllRecords().size()-1);
                 occurrence.getSubFields().add(new SubField(length));
             } 
             //Subsequent occurrences contain FieldOccurrence # - IDC
@@ -86,7 +87,8 @@ public class EbtsBuilder {
                 if (logicalRecord.getIdc() == -1) {
                     nextIdc = getNextAvailableIDC();
                 }
-                final String idc = String.format("%02d", nextIdc);
+                //final String idc = String.format("%02d", nextIdc);
+                final String idc = "" + nextIdc;
                 logicalRecord.setIdc((byte) nextIdc);
                 occurrence.getSubFields().add(new SubField(idc));
             }
